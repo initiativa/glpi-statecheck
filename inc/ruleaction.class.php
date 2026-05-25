@@ -308,7 +308,7 @@ class PluginStatecheckRuleAction extends RuleAction {
               FROM `".$this->getTable()."`
               WHERE `".static::$items_id."` = '$ID'
               ORDER BY `id`";
-      $result = $DB->query($sql);
+      $result = $DB->doQuery($sql);
 
       $rules_actions = [];
       while ($rule = $DB->fetchAssoc($result)) {
@@ -469,7 +469,7 @@ class PluginStatecheckRuleAction extends RuleAction {
          $actions_options = $rule->getAllActions();
 
          $actions = [];
-         $res     = $DB->query("SELECT `field`
+         $res     = $DB->doQuery("SELECT `field`
                                 FROM `".$this->getTable()."`
                                 WHERE `".static::$items_id."` = '".$plugin_statecheck_rules_id."'");
 

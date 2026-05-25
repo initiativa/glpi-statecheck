@@ -91,7 +91,7 @@ CREATE TABLE `glpi_plugin_statecheck_profiles` (
 )  
 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `glpi_displaypreferences` VALUES (NULL,'PluginStatecheckRule','2','2','0');
-INSERT INTO `glpi_displaypreferences` VALUES (NULL,'PluginStatecheckRule','6','3','0');
-INSERT INTO `glpi_displaypreferences` VALUES (NULL,'PluginStatecheckRule','7','4','0');
+INSERT INTO `glpi_displaypreferences` (`itemtype`, `num`, `rank`, `users_id`) VALUES ('PluginStatecheckRule','2','2','0');
+INSERT INTO `glpi_displaypreferences` (`itemtype`, `num`, `rank`, `users_id`) VALUES ('PluginStatecheckRule','6','3','0');
+INSERT INTO `glpi_displaypreferences` (`itemtype`, `num`, `rank`, `users_id`) VALUES ('PluginStatecheckRule','7','4','0');
 

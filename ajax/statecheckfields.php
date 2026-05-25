@@ -75,7 +75,7 @@ if (!$imainstatefield && !empty($values) && !empty($values[$imainstatefield]))
 	$queryrule .= " or plugin_statecheck_targetstates_id = ".$values[$imainstatefield].")";
 else
 	$queryrule .= ")";
-if ($resultrule=$DB->query($queryrule)) {
+if ($resultrule=$DB->doQuery($queryrule)) {
 	while ($datarule=$DB->fetchAssoc($resultrule)) {
 		$rules_id = $datarule['id'];
 		$criteriacheck = true;
@@ -131,7 +131,7 @@ if ($resultrule=$DB->query($queryrule)) {
 		if ($criteriacheck) {
 				$queryaction = "select field, action_type, value from glpi_plugin_statecheck_ruleactions ".
 							"where plugin_statecheck_rules_id = $rules_id ";
-				if ($resultaction=$DB->query($queryaction)) {
+				if ($resultaction=$DB->doQuery($queryaction)) {
 					while ($dataaction=$DB->fetchAssoc($resultaction)) {
 						$checkedfield[] = $dataaction;
 				}

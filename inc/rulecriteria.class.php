@@ -323,7 +323,7 @@ class PluginStatecheckRuleCriteria extends CommonDBChild {
               WHERE `".static::$items_id."` = '$ID'
               ORDER BY `id`";
 
-      $result     = $DB->query($sql);
+      $result     = $DB->doQuery($sql);
       $rules_list = [];
       while ($rule = $DB->fetchAssoc($result)) {
          $tmp          = new self();

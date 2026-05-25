@@ -201,7 +201,7 @@ class PluginStatecheckProfile extends Profile {
                $query = "UPDATE `glpi_profilerights`
                          SET `rights`='".self::translateARight($profile_data[$old])."'
                          WHERE `name`='$new' AND `profiles_id`='$profiles_id'";
-               $DB->query($query);
+               $DB->doQuery($query);
             }
          }
       }
